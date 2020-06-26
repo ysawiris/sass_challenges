@@ -1,0 +1,38 @@
+// Look at the code and find all of the repeated values. Make a variable for each at the top.
+// SASS Variables begin with $
+$space: 20px;
+$font-stack: Helvetica, Roboto, Arial;
+$border-size: 1px; // Base size
+$petals: 5; // Base Number of Petals
+$color: #f00; // Forground Color
+$size: 200px; // Base size
+$petal-size: $size * 0.6; // Petal size
+
+.container {
+    width: $size; // width: 200px;
+
+    div {
+        width: 120px;
+    }
+}
+
+.box {
+    margin: $space; // margin: 20px;
+}
+
+h1 {
+    font-family: $font-stack; // font-family: Helvetica, Roboto, Arial;
+    font-size: $space * 2; // font-size: 40px;
+}
+
+button {
+    padding: $space $space / 2;
+    padding: 20px 10px;
+}
+
+@for $i from 1 through $petals {
+    $hue: 360 / $petals * $i;
+    .petal-#{$i} {
+        background-color: hsla($hue, 100%, 50%, 0.2);
+    }
+}
